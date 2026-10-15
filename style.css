@@ -283,3 +283,140 @@ a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);color:var(--tex
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* ===== WARM OPEN THEME (Oct 2026): photo-first, sunset orange, no boxes ===== */
+:root{
+  --bg:#FFFFFF; --surf:#FFF5EC; --card:#FFFFFF;
+  --cta:#BF5911; --cta-dark:#A04A0D; --acc:#F08A2C; --sunband:#BF5911;
+  --text:#2E2A27; --muted:#5E5650; --line:#F1E3D6;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Nunito','Helvetica Neue',Arial,sans-serif;
+}
+body{font-family:var(--sans);font-size:19px;line-height:1.7}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600}
+.center{text-align:center}
+.btn{border-radius:999px;font-weight:800;box-shadow:0 4px 14px rgba(191,89,17,.25)}
+.btn.light{background:#fff;color:var(--cta);border-color:#fff;box-shadow:none}
+.btn.light:hover{background:var(--surf);color:var(--cta-dark)}
+.tlink{text-decoration-color:var(--acc)}
+.tlink.light{color:#fff;text-decoration-color:#fff}
+.eyebrow{font-weight:700;letter-spacing:.5px}
+
+/* Header: floats over the photo on the homepage */
+.site-head{background:rgba(255,255,255,.97)}
+body[data-page="home"] .site-head{position:fixed;left:0;right:0;top:0}
+body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)){background:transparent;border-color:transparent;box-shadow:none}
+body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .brand,
+body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .main-nav a:not(.btn),
+body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .head-phone{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+body[data-page="home"] .site-head:not(.scrolled) .main-nav a[aria-current="page"]{border-color:#fff}
+body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .brand svg *,
+body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .head-phone svg *{stroke:#fff}
+.brand span{font-family:var(--serif)}
+
+/* Full-bleed hero slider */
+.hero{padding:0}
+.hero .slides{position:relative;max-width:none}
+.slide,.slide.on{display:none;position:relative;height:clamp(560px,82vh,780px);overflow:hidden;animation:fade .7s ease}
+.slide.on{display:block}
+.slide-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,.05) 45%,rgba(22,10,2,.78) 100%)}
+.slide-text{position:absolute;left:0;right:0;bottom:96px;z-index:1;color:#fff;display:flex;flex-direction:column;gap:16px}
+.slide-text h1,.slide-text .h1{color:#fff;max-width:820px;font-size:clamp(36px,5vw,62px);text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.slide-text p{color:#fff!important;font-size:21px;max-width:640px;text-shadow:0 1px 10px rgba(0,0,0,.55)}
+.slide-text .eyebrow{color:#FFE2C4}.slide-text .eyebrow::before{background:var(--acc)}
+.slider-ctrl{position:absolute;left:0;right:0;bottom:26px;z-index:2;margin:0 auto}
+.arrow{background:rgba(255,255,255,.9);border-color:transparent}
+.dots button{background:rgba(255,255,255,.6)}.dots button[aria-current="true"]{background:#fff}
+.pause{color:#fff}
+
+/* Intro with round photo */
+.intro{display:flex;align-items:center;gap:60px;max-width:1080px}
+.round{width:300px;height:300px;border-radius:50%;object-fit:cover;object-position:center 22%;flex:none;box-shadow:0 0 0 10px var(--surf)}
+.intro-text{display:flex;flex-direction:column;gap:16px}
+.intro-text h2{color:var(--cta);font-size:clamp(34px,4vw,46px)}
+.intro-text p{font-size:21px}
+
+/* Sunset services band */
+.sun-band{background:var(--sunband);color:#fff;padding:90px 0;text-align:center}
+.sun-band h2{color:#fff;font-size:clamp(34px,4vw,46px);margin-bottom:48px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 40px;margin-bottom:52px}
+.svc-item{color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px;border-radius:18px;transition:background .2s}
+.svc-item:hover{background:rgba(255,255,255,.1);color:#fff}
+.svc-item svg{width:46px;height:46px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc-item h3{font-family:var(--sans);font-weight:800;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:#fff}
+.svc-item p{font-size:17px;color:#fff}
+
+/* Trust, centered and open */
+.trust{text-align:center;margin-top:40px}
+.trust div{border-top:0;align-items:center}
+.trust h3{color:var(--cta)}
+
+/* Wedding strip: photo bleeding to the edge */
+.wedding-strip{display:grid;grid-template-columns:1fr 1fr;background:var(--surf);min-height:440px}
+.wedding-strip img{width:100%;height:100%;object-fit:cover;object-position:35% center;display:block}
+.wedding-text{padding:60px 7vw 60px 56px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px}
+.wedding-text h2{font-size:clamp(30px,3vw,40px)}
+.wedding-text .eyebrow{color:var(--cta)}
+
+/* Edge-to-edge photo row */
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr)}
+.photo-row img{width:100%;height:380px;object-fit:cover;object-position:center 30%;display:block;transition:opacity .2s}
+.photo-row a:hover img{opacity:.88}
+
+/* Closing over a sunset photo */
+.closing-band{position:relative;padding:130px 0;text-align:center;color:#fff;background:url(img/life-sunset-sailboat.jpg) center/cover}
+.closing-band::before{content:"";position:absolute;inset:0;background:rgba(20,8,0,.42)}
+.closing-band .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px}
+.closing-band h2{color:#fff;font-size:clamp(36px,4.5vw,56px);text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.closing-band p{font-size:21px;max-width:620px;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.closing-band .row{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:8px}
+
+/* Soften the other pages */
+.closing{background:var(--surf);border-radius:28px}
+.page-head{background:var(--surf);padding:64px 0 52px;margin-bottom:48px}
+.page-head h1{color:var(--text)}
+.acc-item,.form,.methods a,.creds{box-shadow:none;border:1px solid var(--line)}
+.acc-btn .t{font-family:var(--serif)}
+.acc-btn .chev{background:var(--surf);color:var(--cta)}
+.creds{background:var(--surf)}
+.about-grid .ph{border-radius:200px 200px 24px 24px}
+.ph.has-img{border-radius:22px}
+.gallery .ph{border-radius:16px}
+.site-foot{background:#222222;color:#E9DFD6;border-top:0;margin-top:0}
+.site-foot h2,.foot-grid a{color:#fff}
+.foot-grid a:hover{color:#FFC48A}
+
+@media (max-width:1060px){ .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:900px){
+  .slide,.slide.on{height:clamp(520px,86vh,700px)}
+  .slide-photo{order:0}
+  .slide-text{bottom:84px}
+  .intro{flex-direction:column;text-align:center;gap:32px}
+  .intro-text{align-items:center}
+  .round{width:240px;height:240px}
+  .wedding-strip{grid-template-columns:1fr}
+  .wedding-strip img{height:300px}
+  .wedding-text{padding:40px 24px}
+  .photo-row{grid-template-columns:1fr 1fr}
+  .photo-row a:last-child{display:none}
+  .photo-row img{height:240px}
+  .sun-band{padding:64px 0}
+  .closing-band{padding:90px 0}
+  .site-foot{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:600px){
+  .svc-grid{grid-template-columns:1fr;gap:30px}
+  .slide-text p{font-size:18px}
+  .slide-ctas .tlink{display:none}
+}
+.section h2.center{font-size:clamp(32px,3.6vw,44px)}
+@media (max-width:700px){
+  .slide,.slide.on{height:auto;background:#222222}
+  .slide-bg{position:relative;height:360px;display:block}
+  .slide::after{bottom:auto;height:360px;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 35%)}
+  .slide-text{position:relative;bottom:auto;padding-top:28px;padding-bottom:96px}
+  .slider-ctrl{bottom:24px}
+}
+.main-nav a.btn,.main-nav a.btn:hover{color:#fff!important;text-shadow:none!important;border-bottom:2px solid transparent}
+.about-grid .ph.has-img{border-radius:180px 180px 24px 24px}
