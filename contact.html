@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact | Free 15-Minute Consultation with Captain Arlan Stagg</title>
+<meta name="description" content="Request a free 15-minute consultation with Captain Arlan Stagg about captain services, yacht management, owner training, charters, deliveries, boat buying or wedding ceremonies on San Francisco Bay.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Nunito+Sans:wght@400;700;800&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="contact">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-head"></header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's talk about your boat</h1>
+    <p>Questions, plans, or a day on the Bay in mind? Tell me a little about what you need, and we'll set up a free 15-minute conversation. No pressure.</p>
+  </div>
+</section>
+
+<section id="consult" aria-label="Request a consultation" style="scroll-margin-top:100px">
+  <span id="wedding"></span>
+  <div class="wrap contact-grid">
+    <div class="contact-side">
+      <h2>Request a free 15-minute consultation</h2>
+      <p>Whether you need a captain, someone to look after your boat, training, a delivery, help buying a boat, or a wedding ceremony, I'd be glad to hear from you.</p>
+      <div class="methods" data-needs-contact>
+        <a data-phone href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A5A0B" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span>Call <span data-phone-text></span></span></a>
+        <a data-email href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A5A0B" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Email <span data-email-text></span></span></a>
+      </div>
+      <p style="color:var(--muted)">Serving the San Francisco Bay Area, with deliveries and select services in the Sacramento–San Joaquin Delta.</p>
+    </div>
+
+    <form class="form" id="consult-form" novalidate>
+      <h2>Tell me about your plans</h2>
+      <div class="row2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><span class="err" id="f-name-err"></span></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="err" id="f-email-err"></span></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-service">Service <span class="opt">(optional)</span></label>
+          <select id="f-service" name="service">
+            <option value="">Choose one</option>
+            <option>Professional Captain Services</option>
+            <option>Yacht Management</option>
+            <option>Private Boat Handling &amp; Owner Training</option>
+            <option>Private Boat Charters</option>
+            <option>Yacht Delivery &amp; Relocation</option>
+            <option>Pre-Purchase &amp; New Boat Consulting</option>
+            <option>Wedding Officiant / Wedding Ceremony</option>
+            <option>Not sure yet</option>
+          </select></div>
+      </div>
+      <div class="field"><label for="f-message">How can I help?</label><textarea id="f-message" name="message" required></textarea><span class="err" id="f-message-err"></span></div>
+      <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" name="company" tabindex="-1" autocomplete="off"></div>
+      <div class="field"><label for="f-check">Quick check: what is <span data-sum></span>?</label><div class="check-row"><input id="f-check" name="check" inputmode="numeric" autocomplete="off"></div><span class="err" id="f-check-err"></span></div>
+      <button class="btn" type="submit">Request My Free Consultation</button>
+      <p class="status info" role="status" aria-live="polite" hidden></p>
+    </form>
+  </div>
+</section>
+
+</main>
+<footer id="site-foot"></footer>
+<script src="app.js"></script>
+</body>
+</html>
