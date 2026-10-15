@@ -420,3 +420,48 @@ body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .he
 }
 .main-nav a.btn,.main-nav a.btn:hover{color:#fff!important;text-shadow:none!important;border-bottom:2px solid transparent}
 .about-grid .ph.has-img{border-radius:180px 180px 24px 24px}
+
+/* ===== SOFT BLENDS: no hard edges between sections ===== */
+:root{--bg:#FFFAF4;--surf:#FFF1E4}
+body{background:var(--bg)}
+.site-head{background:rgba(255,250,244,.97)}
+/* hero photo fades softly into the page */
+.hero{position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:90px;background:linear-gradient(180deg,rgba(255,250,244,0),var(--bg));pointer-events:none;z-index:1}
+.slide-text{bottom:150px}
+.slider-ctrl{bottom:96px}
+/* sunset band glows in and out instead of starting with a hard line */
+.sun-band{background:linear-gradient(180deg,var(--bg) 0,#F2A766 70px,#D46A1C 160px,#BF5911 50%,#D46A1C calc(100% - 160px),#F2A766 calc(100% - 70px),var(--bg) 100%);padding:170px 0 180px}
+/* trust section on a soft warm wash */
+.trust{margin-top:36px}
+/* wedding: photo melts into its text side; section fades in and out */
+.wedding-strip{background:linear-gradient(180deg,var(--bg) 0,var(--surf) 60px,var(--surf) calc(100% - 60px),var(--bg) 100%)}
+.wedding-strip img{-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent);mask-image:linear-gradient(90deg,#000 70%,transparent)}
+/* photo row: soft top and bottom, small gaps, rounded */
+.photo-row{gap:14px;padding:30px 14px 0}
+.photo-row img{border-radius:22px}
+/* closing sunset fades in from the page and out into the footer */
+.closing-band{margin-top:40px}
+.closing-band::after{content:"";position:absolute;left:0;right:0;top:0;height:110px;background:linear-gradient(180deg,var(--bg),rgba(255,250,244,0))}
+.closing-band{background:linear-gradient(180deg,rgba(0,0,0,0) 75%,#232323 100%),url(img/life-sunset-sailboat.jpg) center/cover}
+.site-foot{background:#232323}
+/* inner page headers fade instead of a hard block */
+.page-head{background:linear-gradient(180deg,var(--surf) 0,var(--surf) 60%,var(--bg) 100%);margin-bottom:24px}
+.closing{background:radial-gradient(ellipse at center,#FFE4CC 0,var(--surf) 70%)}
+@media (max-width:900px){
+  .wedding-strip img{-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+  .sun-band{padding:130px 0 140px}
+}
+@media (max-width:700px){
+  .slide,.slide.on{background:linear-gradient(180deg,#232323 0,#232323 75%,#232323 100%)}
+  .slide-text{bottom:auto;padding-bottom:150px}
+  .slider-ctrl{bottom:80px}
+  .hero::after{height:70px;background:linear-gradient(180deg,rgba(35,35,35,0),var(--bg))}
+}
+.slide-text{bottom:132px}
+.slide::after{background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,.25) 40%,rgba(15,10,5,.82) 100%)}
+@media (max-width:700px){
+  .slide::after{height:360px;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 65%,#232323 100%)}
+  .slide-text{bottom:auto}
+}
+.slide-text{bottom:156px}@media (max-width:700px){.slide-text{bottom:auto}}
