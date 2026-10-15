@@ -468,3 +468,7 @@ body{background:var(--bg)}
 
 /* Hide slideshow arrows and pause link (Captain Arlan request) */
 .slider-ctrl .arrow,.slider-ctrl .pause{display:none!important}
+
+/* Charter page */
+.faq-q{font-size:21px;margin-top:22px}
+.faq-a{margin-top:6px;color:#4A3826}

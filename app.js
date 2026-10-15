@@ -12,7 +12,7 @@ var SITE = {
 
 (function () {
   var page = document.body.getAttribute("data-page") || "home";
-  var PAGES = [["index.html","Home","home"],["about.html","About","about"],["services.html","Services","services"],["gallery.html","Gallery","gallery"],["contact.html","Contact","contact"]];
+  var PAGES = [["index.html","Home","home"],["about.html","About","about"],["services.html","Services","services"],["charters.html","Charters","charters"],["gallery.html","Gallery","gallery"],["contact.html","Contact","contact"]];
   var telHref = SITE.phone ? "tel:" + SITE.phone.replace(/[^\d+]/g, "") : "";
   var PHONE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A5A0B" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>';
   var MAIL_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A5A0B" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
