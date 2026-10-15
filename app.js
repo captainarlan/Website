@@ -14,8 +14,8 @@ var SITE = {
   var page = document.body.getAttribute("data-page") || "home";
   var PAGES = [["index.html","Home","home"],["about.html","About","about"],["services.html","Services","services"],["gallery.html","Gallery","gallery"],["contact.html","Contact","contact"]];
   var telHref = SITE.phone ? "tel:" + SITE.phone.replace(/[^\d+]/g, "") : "";
-  var PHONE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A5A0B" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>';
-  var MAIL_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A5A0B" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+  var PHONE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>';
+  var MAIL_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
   var LOGO = '<svg viewBox="0 0 64 40" aria-hidden="true"><path d="M4 27 C 18 31 40 31 60 22 L 54 30 C 40 35 18 35 8 31 Z" fill="#C2541A"/><path d="M16 24 L 22 15 L 44 15 L 52 22 Z" fill="none" stroke="#C2541A" stroke-width="2.6" stroke-linejoin="round"/><path d="M26 15 L 30 9 L 42 9 L 44 15" fill="none" stroke="#E8833A" stroke-width="2.4" stroke-linejoin="round"/></svg>';
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
   function links(){return PAGES.map(function(p){return '<li><a href="'+p[0]+'"'+(p[2]===page?' aria-current="page"':'')+'>'+p[1]+'</a></li>';}).join("");}
@@ -26,7 +26,7 @@ var SITE = {
     head.className = "site-head";
     head.innerHTML =
       '<div class="wrap head-in">' +
-        '<a class="brand" href="index.html" aria-label="Captain Arlan Stagg, home">' + LOGO + '<span>Captain Arlan Stagg<small>Captain &amp; Yacht Services</small></span></a>' +
+        '<a class="brand" href="index.html" aria-label="Captain Arlan Stagg, home"><span>Captain Arlan Stagg<small>Captain &amp; Yacht Services</small></span></a>' +
         '<nav class="main-nav" aria-label="Main"><ul>' + links() + '</ul>' +
           (SITE.phone ? '<a class="head-phone" href="' + telHref + '">' + PHONE_SVG + esc(SITE.phone) + '</a>' : '') +
           '<a class="btn sm" href="contact.html#consult">Free Consultation</a></nav>' +
