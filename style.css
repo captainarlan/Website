@@ -497,3 +497,19 @@ body{background:var(--bg)}
 @media (max-width:900px){.acc-sum{padding:0 22px 20px}}
 .fee-note{margin-top:14px!important;font-weight:700;font-size:17px!important;color:var(--text)}
 .field .hint{display:block;font-size:15px;color:var(--muted);margin:-2px 0 6px}
+
+/* Services band on cream: orange as accent only */
+.sun-band{background:var(--bg);color:var(--text);padding:96px 0 90px}
+.sun-band h2{color:var(--text)}
+.sun-band .svc-item,.sun-band .svc-item:hover{color:var(--text)}
+.sun-band .svc-item svg{stroke:var(--cta)}
+.sun-band .svc-item h3{color:var(--cta)}
+.sun-band .svc-item p{color:var(--text)}
+.sun-band .svc-sub{color:var(--muted)!important;opacity:1}
+.sun-band .btn.light{background:var(--cta);color:#fff;border-color:var(--cta);box-shadow:0 4px 14px rgba(191,89,17,.25)}
+.sun-band .btn.light:hover{background:var(--cta-dark);border-color:var(--cta-dark)}
+.sun-band .tlink.light{color:var(--text);text-decoration-color:var(--acc)}
+.sun-band .tlink.light:hover{color:var(--cta)}
+.more-ways{border-top:1px solid var(--line)}
+.more-ways h3{color:var(--muted)}
+@media (max-width:900px){.sun-band{padding:64px 0 60px}}
