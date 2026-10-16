@@ -55,7 +55,7 @@ var SITE = {
     contactBits.push('<li><a href="contact.html#consult">Request a free 15-minute consultation</a></li>');
     foot.innerHTML =
       '<div class="wrap"><div class="foot-grid">' +
-        '<div><h2>Captain Arlan Stagg</h2><p style="margin-top:8px">Captain services, yacht management, owner training and wedding ceremonies on San Francisco Bay. Deliveries and select services in the Sacramento–San Joaquin Delta.</p></div>' +
+        '<div><h2>Captain Arlan Stagg</h2><p style="margin-top:8px">Yacht management, private charters, captain services, owner training and wedding ceremonies on San Francisco Bay. Deliveries and select services in the Sacramento–San Joaquin Delta.</p></div>' +
         '<nav aria-label="Footer"><ul>' + PAGES.map(function(p){return '<li><a href="' + p[0] + '">' + p[1] + '</a></li>';}).join("") + '</ul></nav>' +
         '<div><ul>' + contactBits.join("") + '</ul></div>' +
       '</div><p class="foot-small">© ' + new Date().getFullYear() + ' Captain Arlan Stagg · USCG 200-Ton Near Coastal Master</p></div>';
@@ -129,7 +129,11 @@ var SITE = {
   function openFromHash() {
     var id = (location.hash || "").slice(1); if (!id) return;
     var t = document.getElementById(id);
-    if (t && t.classList.contains("acc-item")) { setOpen(t, true); setTimeout(function(){ t.scrollIntoView({ block: "start" }); }, 30); }
+    if (t && t.classList.contains("acc-item")) {
+      setOpen(t, true);
+      var go = function(){ var hd = document.querySelector(".site-head"); var off = (hd ? hd.getBoundingClientRect().height : 0) + 16; window.scrollTo(0, t.getBoundingClientRect().top + window.pageYOffset - off); };
+      setTimeout(go, 40); if (document.readyState !== "complete") window.addEventListener("load", function(){ setTimeout(go, 20); }, { once: true });
+    }
   }
   if (items.length) { openFromHash(); window.addEventListener("hashchange", openFromHash); }
 
@@ -165,7 +169,20 @@ var SITE = {
     var status = form.querySelector(".status"), sum = form.querySelector("[data-sum]");
     var a = 2 + Math.floor(Math.random() * 7), b2 = 1 + Math.floor(Math.random() * 8);
     sum.textContent = a + " + " + b2;
-    if (location.hash === "#wedding") { form.querySelector("#f-service").value = "Wedding Officiant / Wedding Ceremony"; }
+    form.noValidate = true; /* JavaScript handles validation; without it the browser posts natively */
+    var checkWrap = document.getElementById("f-check-wrap"); if (checkWrap) checkWrap.hidden = false;
+    var SERVICES = { management: "Yacht Management", charters: "Private Boat Charters", training: "Private Boat Handling & Owner Training", captain: "Professional Captain Services", delivery: "Yacht Delivery & Relocation", consulting: "Pre-Purchase & New Boat Consulting", weddings: "Wedding Officiant / Wedding Ceremony" };
+    var HINTS = { "Yacht Management": "If known, include your boat, approximate length, marina and the help you need.", "Private Boat Charters": "If known, include your date, guest count and occasion.", "Private Boat Handling & Owner Training": "Tell me about your boat, location and what you\u2019d like help with." };
+    var GENERIC_HINT = "Tell me what you have in mind and any timing or location details.";
+    var sel = form.querySelector("#f-service"), hint = document.getElementById("f-message-hint");
+    function setHint(){ if (hint) hint.textContent = HINTS[sel.value] || GENERIC_HINT; }
+    var want = null;
+    try { want = new URLSearchParams(location.search).get("service"); } catch (e) {}
+    if (!want && location.hash === "#wedding") want = "weddings";
+    if (want && Object.prototype.hasOwnProperty.call(SERVICES, want)) {
+      for (var o = 0; o < sel.options.length; o++) { if (sel.options[o].text === SERVICES[want]) { sel.selectedIndex = o; break; } }
+    }
+    setHint(); sel.addEventListener("change", setHint);
     function setStatus(kind, msg, show) { status.className = "status " + kind; status.textContent = msg; status.hidden = false; if (show && status.scrollIntoView) status.scrollIntoView({ block: "center", behavior: "smooth" }); }
     if (!SITE.formEndpoint) setStatus("info", "This form isn't connected to an inbox yet. Please call or email me directly using the details on this page.");
     function fieldError(id, msg) {
@@ -183,14 +200,14 @@ var SITE = {
       var ans = parseInt(form.elements["check"].value, 10);
       fieldError("f-check", ans === a + b2 ? "" : "That answer isn't right. Please try again."); ok = ok && ans === a + b2;
       if (!ok) { setStatus("bad", "Please fix the highlighted fields."); var first = form.querySelector('[aria-invalid="true"]'); if (first) first.focus(); return; }
-      if (form.elements["company"].value) return; /* spam trap filled: silently ignore */
+      if (form.elements["_honey"].value) return; /* spam trap filled: silently ignore */
       if (!SITE.formEndpoint) { setStatus("info", "Thanks! This form isn't connected to an inbox yet, so your message was not sent. Please call or email me directly."); return; }
       var btn = form.querySelector("button[type=submit]"); btn.disabled = true; setStatus("info", "Sending…", true);
       var service = form.elements["service"].value;
       var data = { name: name, email: email, phone: form.elements["phone"].value.trim(), service: service, message: msg, _replyto: email, _subject: "Website inquiry" + (service ? ": " + service : "") + " (" + name + ")", _template: "table" };
       fetch(SITE.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || String(j.success) !== "true") throw new Error(j.message || r.status); }); })
-        .then(function () { setStatus("ok", "Thank you, " + name + "! Your message was sent. I'll be in touch soon.", true); form.reset(); })
+        .then(function () { setStatus("ok", "Thank you. Your inquiry has been submitted. If you need to reach me directly, call " + SITE.phone + " or email " + SITE.email + ".", true); form.reset(); setHint(); })
         .catch(function () { setStatus("bad", "Sorry, your message couldn't be sent. Please call or email me directly.", true); })
         .then(function () { btn.disabled = false; });
     });

@@ -17,8 +17,8 @@
 <section class="page-head">
   <div class="wrap">
     <span class="eyebrow">Contact</span>
-    <h1>Let's talk about your boat</h1>
-    <p>Questions, plans, or a day on the Bay in mind? Tell me a little about what you need, and we'll set up a free 15-minute conversation. No pressure.</p>
+    <h1>Let’s talk about what you need.</h1>
+    <p>Looking for yacht management, a private charter, training or another captain service? Send me a few details, and I’ll follow up to discuss the next step.</p>
   </div>
 </section>
 
@@ -35,8 +35,10 @@
       <p style="color:var(--muted)">Serving the San Francisco Bay Area, with deliveries and select services in the Sacramento–San Joaquin Delta.</p>
     </div>
 
-    <form class="form" id="consult-form" novalidate>
-      <h2>Tell me about your plans</h2>
+    <form class="form" id="consult-form" action="https://formsubmit.co/arlanstagg@icloud.com" method="POST">
+      <input type="hidden" name="_subject" value="Website inquiry (captainarlan.com)">
+      <input type="hidden" name="_template" value="table">
+      <h2>Tell me what you have in mind.</h2>
       <div class="row2">
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><span class="err" id="f-name-err"></span></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="err" id="f-email-err"></span></div>
@@ -56,10 +58,10 @@
             <option>Not sure yet</option>
           </select></div>
       </div>
-      <div class="field"><label for="f-message">How can I help?</label><textarea id="f-message" name="message" required></textarea><span class="err" id="f-message-err"></span></div>
-      <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" name="company" tabindex="-1" autocomplete="off"></div>
-      <div class="field"><label for="f-check">Quick check: what is <span data-sum></span>?</label><div class="check-row"><input id="f-check" name="check" inputmode="numeric" autocomplete="off"></div><span class="err" id="f-check-err"></span></div>
-      <button class="btn" type="submit">Request My Free Consultation</button>
+      <div class="field"><label for="f-message">How can I help?</label><span class="hint" id="f-message-hint">Tell me what you have in mind and any timing or location details.</span><textarea id="f-message" name="message" required aria-describedby="f-message-hint"></textarea><span class="err" id="f-message-err"></span></div>
+      <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <div class="field" id="f-check-wrap" hidden><label for="f-check">Quick check: what is <span data-sum></span>?</label><div class="check-row"><input id="f-check" name="check" inputmode="numeric" autocomplete="off"></div><span class="err" id="f-check-err"></span></div>
+      <button class="btn" type="submit">Send My Inquiry</button>
       <p class="status info" role="status" aria-live="polite" hidden></p>
     </form>
   </div>

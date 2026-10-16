@@ -472,3 +472,28 @@ body{background:var(--bg)}
 /* Charter page */
 .faq-q{font-size:21px;margin-top:22px}
 .faq-a{margin-top:6px;color:#4A3826}
+
+/* Commercial update (Oct 2026): three priority services, then compact links */
+.svc-grid.priority{grid-template-columns:1.25fr 1fr 1fr;gap:44px 48px;margin-bottom:44px;align-items:start}
+.svc-grid.priority .svc-item{gap:12px;padding:8px}
+.svc-grid.priority .svc-item:hover{background:none}
+.svc-grid.priority .svc-item p{font-size:17px}
+.svc-grid.priority .svc-item.lead h3{font-size:19px}
+.svc-grid.priority .svc-item.lead p:not(.svc-sub){font-size:19px}
+.svc-sub{font-size:15.5px!important;opacity:.92}
+.svc-grid.priority .btn{margin-top:6px}
+.more-ways{border-top:1px solid rgba(255,255,255,.35);padding-top:30px;max-width:900px;margin:0 auto}
+.more-ways h3{font-family:var(--sans);font-weight:800;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.more-ways p{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0}
+.wedding-strip.compact{min-height:340px}
+.wedding-strip.compact .wedding-text{padding:44px 7vw 44px 48px}
+@media (max-width:1060px){.svc-grid.priority{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}}
+@media (max-width:900px){.wedding-strip.compact img{height:240px}}
+.acc-sum{margin:-6px 0 0;padding:0 28px 22px 76px;color:var(--muted);font-size:17px}
+.acc-item:has(.acc-btn[aria-expanded="true"]) .acc-sum{padding-bottom:10px}
+.acc-panel .sub-h{font-family:var(--sans);font-weight:800;font-size:16px;letter-spacing:1px;text-transform:uppercase;color:var(--cta);margin-top:8px}
+.acc-panel .note + ul{margin-top:-6px}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+@media (max-width:900px){.acc-sum{padding:0 22px 20px}}
+.fee-note{margin-top:14px!important;font-weight:700;font-size:17px!important;color:var(--text)}
+.field .hint{display:block;font-size:15px;color:var(--muted);margin:-2px 0 6px}
