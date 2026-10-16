@@ -513,3 +513,5 @@ body{background:var(--bg)}
 .more-ways{border-top:1px solid var(--line)}
 .more-ways h3{color:var(--muted)}
 @media (max-width:900px){.sun-band{padding:64px 0 60px}}
+.lead-line{font-family:var(--serif);font-size:24px!important;color:var(--cta)!important;margin-top:6px}
+.book-note{font-size:16px!important;color:var(--muted)!important;margin-top:4px!important}
