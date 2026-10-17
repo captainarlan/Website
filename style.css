@@ -523,11 +523,7 @@ body{background:var(--bg)}
 .hero-photo{object-position:38% 35%}
 @media (max-width:700px){.hero-photo{object-position:70% 35%}}
 @media (min-width:701px) and (max-width:1200px){.hero-photo{object-position:58% 35%}}
-/* iPads and squarer screens: photo on top, uncropped, text below (like phones) */
-@media (min-width:701px) and (max-aspect-ratio:3/2){
-  .slide,.slide.on{height:auto;background:#232323}
-  .hero-photo{position:relative;display:block;width:100%;height:auto;aspect-ratio:2700/1110;object-position:center}
-  .slide::after{bottom:auto;height:150px;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0))}
-  .slide-text{position:relative;bottom:auto;padding-top:40px;padding-bottom:140px}
-  .slide-text h1{max-width:none}
-}
+/* iPads and squarer screens: keep photo behind text, shift so the full upper body shows */
+@media (min-width:701px){.slide-text h1{max-width:680px}}
+@media (min-width:701px) and (max-aspect-ratio:3/2){.hero-photo{object-position:76% 35%}.slide-text h1{max-width:520px;font-size:clamp(34px,4.6vw,52px)}.slide-text p{max-width:470px}}
+
