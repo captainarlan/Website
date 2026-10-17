@@ -525,7 +525,7 @@ body{background:var(--bg)}
 @media (min-width:701px) and (max-width:1200px){.hero-photo{object-position:52% 35%}}
 /* iPads and squarer screens: keep photo behind text, shift so the full upper body shows */
 @media (min-width:701px){.slide-text h1{max-width:680px}}
-@media (min-width:701px) and (max-aspect-ratio:3/2){.hero-photo{object-position:58% 35%}.slide-text h1{max-width:520px;font-size:clamp(34px,4.6vw,52px)}.slide-text p{max-width:470px}}
+
 
 /* iPad-size screens: shorter photo so Captain Arlan fits fully, centered right of the words */
 @media (min-width:701px) and (max-width:1200px){
@@ -537,3 +537,5 @@ body{background:var(--bg)}
   .hero-photo{object-position:34% 35%}
   .slide::after{background:linear-gradient(90deg,rgba(15,10,5,.78) 0%,rgba(15,10,5,.5) 42%,rgba(0,0,0,0) 62%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 28%)}
 }
+/* Larger screens: shorter photo band so Captain Arlan always fits fully to the right of the words */
+@media (min-width:1201px){.slide,.slide.on{height:620px}.slide-text{bottom:96px}.hero-photo{object-position:0% 35%}.slide::after{background:linear-gradient(90deg,rgba(15,10,5,.72) 0%,rgba(15,10,5,.45) 40%,rgba(0,0,0,0) 60%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 26%)}}
