@@ -365,7 +365,7 @@ body[data-page="home"] .site-head:not(.scrolled):not(:has(.mobile-nav.open)) .he
 .photo-row a:hover img{opacity:.88}
 
 /* Closing over a sunset photo */
-.closing-band{position:relative;padding:130px 0;text-align:center;color:#fff;background:url(img/life-sunset-sailboat.jpg) center/cover}
+.closing-band{position:relative;padding:130px 0;text-align:center;color:#fff;background:url(img/sunset-golden-gate.jpg) center/cover}
 .closing-band::before{content:"";position:absolute;inset:0;background:rgba(20,8,0,.42)}
 .closing-band .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px}
 .closing-band h2{color:#fff;font-size:clamp(36px,4.5vw,56px);text-shadow:0 2px 16px rgba(0,0,0,.5)}
@@ -443,7 +443,7 @@ body{background:var(--bg)}
 /* closing sunset fades in from the page and out into the footer */
 .closing-band{margin-top:40px}
 .closing-band::after{content:"";position:absolute;left:0;right:0;top:0;height:110px;background:linear-gradient(180deg,var(--bg),rgba(255,250,244,0))}
-.closing-band{background:linear-gradient(180deg,rgba(0,0,0,0) 75%,#232323 100%),url(img/life-sunset-sailboat.jpg) center/cover}
+.closing-band{background:linear-gradient(180deg,rgba(0,0,0,0) 75%,#232323 100%),url(img/sunset-golden-gate.jpg) center/cover}
 .site-foot{background:#232323}
 /* inner page headers fade instead of a hard block */
 .page-head{background:linear-gradient(180deg,var(--surf) 0,var(--surf) 60%,var(--bg) 100%);margin-bottom:24px}
@@ -541,3 +541,4 @@ body{background:var(--bg)}
 @media (min-width:1201px){.slide,.slide.on{height:620px}.slide-text{bottom:96px}.hero-photo{object-position:0% 35%}.slide::after{background:linear-gradient(90deg,rgba(15,10,5,.72) 0%,rgba(15,10,5,.45) 40%,rgba(0,0,0,0) 60%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 26%)}}
 .wedding-strip img[src*="wedding-ceremony"]{object-position:center 22%}
 .photo-row img[src*="bow-sausalito"]{object-position:center 25%}
+.closing-band{background-position:center 55%!important}
