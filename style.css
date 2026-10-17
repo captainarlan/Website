@@ -547,3 +547,24 @@ body{background:var(--bg)}
 .closing-band::after{height:60px}
 .closing-band{background:linear-gradient(180deg,rgba(0,0,0,0) 85%,#232323 100%),url(img/sunset-golden-gate.jpg) center 55%/cover!important}
 .closing-band h2,.closing-band p{text-shadow:0 2px 14px rgba(0,0,0,.6)}
+/* ===== Final polish: proportions and blending ===== */
+/* Wedding feature: the new tall photo was stretching the band; keep it in proportion, faces in view */
+.wedding-strip.compact{min-height:0;height:460px}
+.wedding-strip.compact img{height:460px;object-position:center 18%}
+/* Even rhythm between homepage sections (remove oversized gaps) */
+body[data-page="home"] .section{padding:72px 0}
+body[data-page="home"] .sun-band{padding:96px 0 72px}
+.trust{margin-top:28px}
+/* Photo row sits evenly between the wedding band and the sunset */
+.photo-row{padding:28px 14px 0}
+/* Charters page: tighten the space above the photo cards and before the closing card */
+body[data-page="charters"] .section{padding:40px 0}
+/* Contact: keep the form card from touching the footer */
+body[data-page="contact"] main{padding-bottom:80px}
+@media (max-width:900px){
+  .wedding-strip.compact{height:auto}
+  .wedding-strip.compact img{height:300px;object-position:center 20%}
+  body[data-page="home"] .section{padding:52px 0}
+  body[data-page="home"] .sun-band{padding:64px 0 52px}
+  body[data-page="contact"] main{padding-bottom:48px}
+}
