@@ -540,3 +540,4 @@ body{background:var(--bg)}
 /* Larger screens: shorter photo band so Captain Arlan always fits fully to the right of the words */
 @media (min-width:1201px){.slide,.slide.on{height:620px}.slide-text{bottom:96px}.hero-photo{object-position:0% 35%}.slide::after{background:linear-gradient(90deg,rgba(15,10,5,.72) 0%,rgba(15,10,5,.45) 40%,rgba(0,0,0,0) 60%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 26%)}}
 .wedding-strip img[src*="wedding-ceremony"]{object-position:center 22%}
+.photo-row img[src*="bow-sausalito"]{object-position:center 25%}
