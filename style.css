@@ -542,3 +542,8 @@ body{background:var(--bg)}
 .wedding-strip img[src*="wedding-ceremony"]{object-position:center 22%}
 .photo-row img[src*="bow-sausalito"]{object-position:center 25%}
 .closing-band{background-position:center 55%!important}
+/* Closing sunset: let the vivid colors show */
+.closing-band::before{background:rgba(10,5,0,.22)}
+.closing-band::after{height:60px}
+.closing-band{background:linear-gradient(180deg,rgba(0,0,0,0) 85%,#232323 100%),url(img/sunset-golden-gate.jpg) center 55%/cover!important}
+.closing-band h2,.closing-band p{text-shadow:0 2px 14px rgba(0,0,0,.6)}
