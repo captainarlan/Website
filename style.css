@@ -520,10 +520,10 @@ body{background:var(--bg)}
 @media (min-width:701px){.slide-text{gap:12px}}
 @media (min-width:701px) and (max-height:900px){.slide,.slide.on{height:max(600px,92vh)}.slide-text{bottom:110px}.slide-text h1{font-size:clamp(34px,4.2vw,54px)}}
 .svc-grid.priority .card-tagline{font-family:var(--serif);font-style:italic;font-size:22px!important;line-height:1.35;color:var(--cta)!important;margin:2px 0 4px}
-.hero-photo{object-position:38% 35%}
-@media (max-width:700px){.hero-photo{object-position:70% 35%}}
-@media (min-width:701px) and (max-width:1200px){.hero-photo{object-position:58% 35%}}
+.hero-photo{object-position:28% 35%}
+@media (max-width:700px){.hero-photo{object-position:72% 35%}}
+@media (min-width:701px) and (max-width:1200px){.hero-photo{object-position:52% 35%}}
 /* iPads and squarer screens: keep photo behind text, shift so the full upper body shows */
 @media (min-width:701px){.slide-text h1{max-width:680px}}
-@media (min-width:701px) and (max-aspect-ratio:3/2){.hero-photo{object-position:76% 35%}.slide-text h1{max-width:520px;font-size:clamp(34px,4.6vw,52px)}.slide-text p{max-width:470px}}
+@media (min-width:701px) and (max-aspect-ratio:3/2){.hero-photo{object-position:58% 35%}.slide-text h1{max-width:520px;font-size:clamp(34px,4.6vw,52px)}.slide-text p{max-width:470px}}
 
